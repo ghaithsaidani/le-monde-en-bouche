@@ -1,0 +1,317 @@
+@use "../abstracts/colors"as *;
+@use "../abstracts/fonts"as *;
+
+header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 2;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        .logo {
+            width: 65px;
+        }
+
+
+    }
+}
+
+main {
+    section {
+        height: 100vh;
+        padding: 105px 0;
+        
+    }
+    #about {
+        padding: 200px 0;
+        article {
+            background-color: $primary;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px 20px 0 0;
+            padding: 0;  
+            &::after {
+                content: '';
+                position: absolute;
+                height: 700px;
+                width: 100%;
+                z-index: -1;
+                clip-path: circle(60% at 50% 30%);
+                -webkit-clip-path: circle(60% at 50% 30%);
+                background: $primary;
+                border-radius: 20px;
+                top: 0 ;
+            }
+
+            .description {
+                padding: 0 15%;
+                display: flex;
+                flex-direction: column;
+
+                h2 {
+                    margin-top: -55px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 20px;
+                    font-size: 2rem;
+                    color: $primary;
+
+                    span {
+                        color: white;
+                        font-size: 1.7rem;
+                    }
+                }
+
+                p {
+                    font-size: 0.7rem;
+                    text-align: center;
+                    margin-top: 50px;
+                    color: white;
+                }
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: $primary;
+                    background-color: white;
+                    text-transform: capitalize;
+                    font-size: 0.8rem;
+                    margin: 50px auto 0 auto;
+
+                    border-radius: 20px;
+                    padding: 10px 15px;
+                }
+            }
+
+            .dishes {
+                position: absolute;
+                place-self: center;
+                height: 320px;
+                width: 320px;
+                display: grid;
+                place-items: center;
+                transform: translateY(115%);
+
+                .others-dishes {
+                    height: 320px;
+                    width: 320px;
+                    border: 2px solid white;
+                    border-style: dashed;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    li {
+                        img {
+                            width: 100px;
+                        }
+
+                        &:nth-child(1) {
+                            position: absolute;
+                            left: -40px;
+                            top: 50px;
+                        }
+
+                        &:nth-child(2) {
+                            position: absolute;
+                            left: 20px;
+                            top: -20px;
+                        }
+
+                        &:nth-child(3) {
+                            position: absolute;
+                            left: 105px;
+                            top: -50px;
+                        }
+
+                        &:nth-child(4) {
+                            position: absolute;
+                            right: 20px;
+                            top: -20px;
+                        }
+
+                        &:nth-child(5) {
+                            position: absolute;
+                            right: -40px;
+                            top: 50px;
+                        }
+                    }
+
+                }
+
+                >img {
+                    width: 200px;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+
+    #explore {
+        display: grid;
+        place-items: center;
+        position: relative;
+        article {
+            .select-menu {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 270px;
+                .select-btn,
+                .options {
+                    box-shadow: 0px 2.58px 2.58px rgba(0, 0, 0, 0.25);
+                }
+
+                .select-btn {
+                    display: flex;
+                    height: 55px;
+                    background: $secondary;
+                    padding: 0 20px ;
+                    font-size: 18px;
+                    font-weight: 400;
+                    border-radius: 8px;
+                    align-items: center;
+                    cursor: pointer;
+                    justify-content: space-between;
+                    .sBtn-content{
+                        display: flex;
+                    
+                        >img {
+                            width: 40px;
+                            margin-right: 50px;
+                        }
+                        .sBtn-text {
+                            display: flex;
+                            align-items: center;
+                            font-size: 22px;
+                            color: $primary;
+                        }
+                    }
+
+                    .text-3xl {
+                        transition: 0.3s;
+                    }
+                }
+
+                .options {
+                    position: relative;
+                    margin-top: 15px;
+                    border-radius: 8px;
+                    background: $secondary;
+                    display: none;
+
+                    .option {
+                        display: flex;
+                        height: 55px;
+                        cursor: pointer;
+                        padding: 30px;
+                        align-items: center;
+                        background: $secondary;
+                        border-bottom: 1px solid $primary;
+                        border-style: dashed;
+
+                        &:first-child {
+                            border-radius: 8px 8px 0 0;
+                        }
+
+                        &:last-child {
+                            border-radius: 0 0 8px 8px;
+                            border-bottom: none;
+                        }
+
+                        &:hover {
+                            //border: none;
+                            background-color: $primary;
+                            .option-text {
+                                
+                                color: #ffffff;
+                            }
+                        }
+                        
+
+                        img {
+                            width: 40px;
+                            margin-right: 50px;
+                        }
+
+                        .option-text {
+                            font-size: 22px;
+                            color: $primary;
+                        }
+                    }
+                }
+
+                &.active {
+                    .select-btn{
+                        .text-3xl {
+                            transform: rotate(-180deg);
+                            color: $primary;
+                        }
+                    }
+
+                    .options {
+                        display: block;
+                    }
+                }
+
+                &.selected {
+                    .select-btn{
+                        background-color: $primary;
+                        .text-3xl {
+                            color: #fff;
+                        }
+                        .sBtn-text {
+                            color: #fff;
+                        }
+                    }
+ 
+                }
+                
+            }
+            img[alt="World Map"]{
+                margin-top: 90px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width : 700px) {
+    
+}
+
+@media screen and (max-width : 400px) and (max-height : 700px) {
+    main {
+        section {
+            height: 140vh;
+        }
+    }
+}
+
+@media screen and (min-width : 500px){
+    main {
+        #about {
+            //padding-top: 200px;
+            article {
+                //padding: 35px 0;  
+                .dishes {
+                    //top: 125%;
+                }
+            }
+        }
+    }
+}
+
+
+
