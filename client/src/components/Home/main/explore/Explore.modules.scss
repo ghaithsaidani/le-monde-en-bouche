@@ -1,0 +1,14 @@
+@use "../../../../assets/scss/abstracts/colors" as *;
+@use "../../../../assets/scss/abstracts/fonts" as *;
+
+#explore {
+        display: grid;
+        place-items: center;
+        position: relative;
+        article {
+            img[alt="World Map"]{
+                margin-top: 90px;
+                width: 100%;
+            }
+        }
+}

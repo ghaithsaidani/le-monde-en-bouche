@@ -1,0 +1,133 @@
+@use "../../../../assets/scss/abstracts/colors" as *;
+@use "../../../../assets/scss/abstracts/fonts" as *;
+
+#hero {
+  padding: 170px 0 100px 0;
+  height: 100vh;
+  article {
+    background-color: $primary;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+    padding: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 700px;
+      width: 100%;
+      z-index: -1;
+      clip-path: circle(350px at 50% 30%);
+      -webkit-clip-path: circle(400px at 50% 30%);
+      background: $primary;
+      border-radius: 20px;
+      top: 0;
+    }
+
+    .description {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        margin-top: -55px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        font-size: 2rem;
+        color: $primary;
+
+        span {
+          color: white;
+          font-size: 1.7rem;
+        }
+      }
+
+      p {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-top: 50px;
+        padding:0 20%;
+        color: white;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $primary;
+        background-color: white;
+        text-transform: capitalize;
+        font-size: 0.8rem;
+        margin: 50px auto 0 auto;
+        border-radius: 20px;
+        padding: 10px 15px;
+      }
+    }
+
+    .dishes {
+      position: absolute;
+      place-self: center;
+      height: 320px;
+      width: 320px;
+      display: grid;
+      place-items: center;
+      transform: translateY(425px);
+
+      .others-dishes {
+        height: 320px;
+        width: 320px;
+        border: 2px dashed white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        li {
+          img {
+            width: 100px;
+          }
+
+          &:nth-child(1) {
+            position: absolute;
+            left: -40px;
+            top: 50px;
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            left: 20px;
+            top: -20px;
+          }
+
+          &:nth-child(3) {
+            position: absolute;
+            left: 105px;
+            top: -50px;
+          }
+
+          &:nth-child(4) {
+            position: absolute;
+            right: 20px;
+            top: -20px;
+          }
+
+          &:nth-child(5) {
+            position: absolute;
+            right: -40px;
+            top: 50px;
+          }
+        }
+
+      }
+
+      > img {
+        width: 200px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
