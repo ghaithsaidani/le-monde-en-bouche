@@ -1,27 +1,45 @@
-@use "./abstracts/fonts" as *;
+@use "./abstracts/colors" as *;
+@import "variables.modules";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html{
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
 }
-#root{
-    height: 100%;
+
+#root {
+  height: 100%;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: $title;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefin sans";
 }
 
-p{
-    font-family: $paragraph;
+p {
+  font-family: "Fira sans";
 }
 
-button{
-    font-family: $component;
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: $primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}
+
+button {
+  font-family: "Karla";
 }

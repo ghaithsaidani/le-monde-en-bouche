@@ -1,0 +1,86 @@
+@use '../../../../assets/scss/abstracts/colors' as *;
+
+#about-us {
+  article {
+    .description {
+      padding: 0 2.5rem;
+
+      h2 {
+        span:first-child {
+          color: $primary;
+        }
+
+        span:last-child {
+          color: $secondary;
+        }
+      }
+
+      p {
+        margin-top: 2rem;
+      }
+
+      .services {
+        margin-top: 3rem;
+        display: grid;
+        gap: 2rem 0;
+      }
+
+      button {
+        font-family: "Sofia Pro Regular";
+        background: $primary;
+        padding: .5em 1em;
+        border-radius: 1.5em;
+        color: $light;
+        margin-top:5rem;
+        &:hover {
+          background: linear-gradient(50deg, rgba(255, 255, 255, 0.8) -31.53%, #F54748 400%) /*$background-light*/;
+          outline: 2px solid $primary;
+          color: $primary;
+          transition: background .5s, color .5s;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 650px){
+  #about-us{
+    article {
+      display: flex;
+      gap: 5rem;
+      >img{
+        width: 40%;
+      }
+      .description {
+        margin-top: 7rem;
+        h2 {
+          padding: 0 5rem 0 0;
+        }
+
+        p {
+          padding: 0 5rem 0 0;
+        }
+
+        .services {
+          grid-template-columns: repeat(2,250px);
+          gap: 2rem 1rem;
+        }
+
+        button {
+          font-family: "Sofia Pro Regular";
+          background: $primary;
+          padding: .5em 1em;
+          border-radius: 1.5em;
+          color: $light;
+          margin-top:5rem;
+          &:hover {
+            background: linear-gradient(50deg, rgba(255, 255, 255, 0.8) -31.53%, #F54748 400%) /*$background-light*/;
+            outline: 2px solid $primary;
+            color: $primary;
+            transition: background .5s, color .5s;
+          }
+        }
+      }
+    }
+  }
+}

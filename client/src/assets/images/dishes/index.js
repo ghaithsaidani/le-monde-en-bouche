@@ -1,6 +1,0 @@
-export {default as Dhal} from './dhal.png'
-export {default as Couscous} from './couscous.png'
-export {default as Chicken} from './chicken chow mein.png'
-export {default as Paella} from './paella.png'
-export {default as Pizza} from './Pizza.png'
-export {default as Tajine} from './tajine marocain.png'

@@ -1,0 +1,43 @@
+@use "../../../../assets/scss/abstracts/colors" as *;
+
+
+#special-offers {
+  article {
+    .description {
+      padding: 0 2.5rem;
+      h2 {
+        text-align: center;
+        span {
+          color: $primary;
+        }
+      }
+      p{
+        text-align: center;
+      }
+    }
+    .meal-card{
+      margin: 5rem auto 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width:650px){
+  #special-offers{
+    article{
+      .description{
+        h2{
+          font-size: 3.5rem;
+        }
+        p{
+          width: 55%;
+          margin: 2rem auto;
+        }
+      }
+      .cards{
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+      }
+    }
+  }
+}

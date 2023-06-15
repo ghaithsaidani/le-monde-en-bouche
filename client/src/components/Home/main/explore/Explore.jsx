@@ -3,7 +3,7 @@ import './Explore.modules.scss'
 
 export const Explore = () => {
 	return (
-		<section>
+		<section id="explore">
 			<ExploreArticle/>
 		</section>
 	)

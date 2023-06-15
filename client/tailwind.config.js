@@ -6,11 +6,7 @@ export default {
   ],
   theme: {
     extend: {},
-    colors: {
-      'orange':{
-        500:'#EC833E'
-      },
-    }
+
   },
   plugins: [],
 }

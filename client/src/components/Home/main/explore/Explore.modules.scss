@@ -1,14 +1,46 @@
 @use "../../../../assets/scss/abstracts/colors" as *;
-@use "../../../../assets/scss/abstracts/fonts" as *;
 
 #explore {
-        display: grid;
-        place-items: center;
-        position: relative;
-        article {
-            img[alt="World Map"]{
-                margin-top: 90px;
-                width: 100%;
-            }
+  article {
+
+    .mySwiper {
+      width: 80%;
+      padding: 0 50px;
+      display: flex;
+      .swiper-nav_btns {
+        button {
+          position: absolute;
+          font-size: 2rem;
+          transform: translateY(0.1rem);
+          background: $primary;
+          color: $light;
+          border-radius: 50%;
+          z-index: 3;
+          &:first-child {
+            left: 0;
+          }
+          &:last-child{
+            right: 0;
+          }
+
         }
+
+      }
+    }
+    >img{
+      width: 80%;
+      margin:5rem auto 0 auto;
+    }
+  }
+}
+
+
+@media screen and (min-width: 650px) {
+  #explore{
+    article{
+      >img{
+        height: 82vh;
+      }
+    }
+  }
 }

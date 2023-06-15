@@ -1,4 +1,4 @@
-import {Button, Stack} from "@mui/material"
+import {Button, useMediaQuery, useTheme} from "@mui/material"
 import './Header.modules.scss'
 import {Navbar} from "./navabar/Navbar.jsx";
 import {useDispatch} from "react-redux";
@@ -8,15 +8,13 @@ import {useCallback} from "react";
 
 export const Header=()=>{
     // const dispatch=useDispatch()
-
+    const theme=useTheme()
+    const higherThanMediumQuery = useMediaQuery(theme.breakpoints.up("sm"));
 
     return(
-        <header>
-            <Stack>
+        <header className={`${!higherThanMediumQuery ? '' : ''}`}>
                 <Navbar/>
                 {/*<Button onClick={useCallback(()=>dispatch(changetheme()),[dispatch])}>Hello</Button>*/}
-            </Stack>
-
         </header>
     )
 }

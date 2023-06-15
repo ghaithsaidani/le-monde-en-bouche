@@ -1,59 +1,25 @@
-import {Chicken, Couscous, Dhal, Paella, Pizza, Tajine} from "../../../../../assets/images/dishes/index.js";
-import {AiOutlineCompass} from "react-icons/all.js";
+import {Avatar, Button, Chip, Stack, Typography, useMediaQuery, useTheme} from "@mui/material";
+import {ChipAvatar, HeroImage, HeroImageDektop, HeroLine} from "../../../../../assets/images/index.js";
 
 export const HeroArticle = () => {
-
-    const dishes = [
-        {
-            src: Paella,
-            alt: "Paella"
-        },
-        {
-            src: Chicken,
-            alt: "Chiken chow mein"
-        },
-        {
-            src: Tajine,
-            alt: "Tajine Marocain"
-        },
-        {
-            src: Pizza,
-            alt: "Pizza"
-        },
-        {
-            src: Dhal,
-            alt: "Dhal"
-        },
-    ]
+    const theme = useTheme()
+    const smallQuery = useMediaQuery(theme.breakpoints.up("sm"));
     return (
         <article>
-            <div className="description">
-                <h2>Embarquez<span>Pour un voyage culinaire</span></h2>
-                <p>Avec une variété de plats et de recettes proposés, vous pouvez découvrir de nouveaux goûts et des
-                    délices
-                    culinaires que vous n'auriez jamais pensé possibles. Qu'il s'agisse de mets traditionnels ou de
-                    créations
-                    gastronomiques innovantes, cette application vous fera voyager à travers des cultures et des
-                    cuisines
-                    diverses, pour satisfaire toutes vos envies gourmandes.</p>
-                <button>
-                    travel with your stomach!
-                    <AiOutlineCompass/>
-                </button>
-            </div>
-            <div className="dishes">
-                <ul className="others-dishes">
-                    {
-                        dishes.map((dish) =>
-                                <li key={dish.alt}>
-                                    <img src={dish.src} alt={dish.alt}/>
-                                </li>
-                            )
-                    }
-
-
-                </ul>
-                <img src={Couscous} alt="couscous"/>
+            <img src={smallQuery ? HeroImageDektop : HeroImage} alt={"hero"}/>
+            <div className={"description"}>
+                <Chip
+                    avatar={<Avatar alt="Natacha" src={ChipAvatar}/>}
+                    label="Les âmes se confient en nous"
+                    color={"primary"}
+                    sx={{marginTop: 40}}
+                />
+                <div className={"paragraph"}>
+                    <Typography variant="h2"><span>Embarquez</span> Pour un voyage <span>Culinaire</span></Typography>
+                    <img src={HeroLine} alt={"Hero Line"}/>
+                    <Typography variant={"body1"}>Découvrez les saveurs du monde en un clin d'œil avec "Le Monde en
+                        Bouche" ! Préparez-vous à un voyage gustatif inoubliable, sans quitter votre pays !</Typography>
+                </div>
             </div>
         </article>
     )

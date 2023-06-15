@@ -1,41 +1,48 @@
-const colors = {
-    primary:"#EC833E",
-    white: "#FFFFFF",
-    black: "#090E16",
+export const colors = {
+    primary: "#F54748",
+    light: "#FFFFFF",
+    dark: "#191919",
+    secondary: "#FDC55E"
 }
 
-export const LightPalette=({
-    mode:"light",
-    primary:{
-        main:colors.primary
+export const LightPalette = ({
+    mode: "light",
+    primary: {
+        main: colors.primary
     },
-    background:{
-        default:colors.white,
+    secondary: {
+        main: colors.secondary
     },
-    /* text:{
-        primary:colors.black,
-        secondary:colors.grey.light,
-        disabled:colors.grey.dark
+    background: {
+        default: colors.light,
     },
-    common:{
-        white:colors.white,
-        black:colors.black
+    text: {
+        primary: colors.dark,
+        /*secondary:colors.grey.light,
+        disabled:colors.grey.dark*/
+    },
+    /*common:{
+        light:colors.light,
+        dark:colors.dark
         
-    } */
+    }*/
 })
 
 
-export const DarkPalette=({
-        mode:"dark",
-        primary:{
-            main:colors.primary
-        },
-        background:{
-            default:colors.black,
-        },
-        /* text:{
-            primary:colors.white,
-            secondary:colors.grey.light,
-            disabled:colors.grey.dark
-        } */
+export const DarkPalette = ({
+    mode: "dark",
+    primary: {
+        main: colors.primary
+    },
+    secondary: {
+        main: colors.secondary
+    },
+    background: {
+        default: colors.dark,
+    },
+    text:{
+        primary:colors.light,
+        /*secondary:colors.grey.light,
+        disabled:colors.grey.dark*/
+    }
 })
