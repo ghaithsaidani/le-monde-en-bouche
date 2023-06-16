@@ -2,7 +2,8 @@ export const colors = {
     primary: "#F54748",
     light: "#FFFFFF",
     dark: "#191919",
-    secondary: "#FDC55E"
+    secondary: "#FDC55E",
+    textSecondary:"#42505C"
 }
 
 export const LightPalette = ({
@@ -18,6 +19,7 @@ export const LightPalette = ({
     },
     text: {
         primary: colors.dark,
+        secondary: colors.textSecondary,
         /*secondary:colors.grey.light,
         disabled:colors.grey.dark*/
     },
@@ -42,6 +44,7 @@ export const DarkPalette = ({
     },
     text:{
         primary:colors.light,
+        secondary: colors.textSecondary,
         /*secondary:colors.grey.light,
         disabled:colors.grey.dark*/
     }

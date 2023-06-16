@@ -40,7 +40,7 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
     objects = AppUserManager()
 
     def __str__(self):
-        return self.username
+        return self.nom
 
     class Meta:
         db_table = 'Utilisateur'

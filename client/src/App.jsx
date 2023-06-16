@@ -6,8 +6,8 @@ import { Theme } from "./theme/Theme";
 import { isLightState } from "./features/ThemeSlice";
 import {Home} from "./pages/Home/Home.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Auth from "./pages/Auth/Auth.jsx";
-import {Register} from "./pages/register/Register.jsx";
+import Login from "./pages/auth/login/Login.jsx";
+import {Register} from "./pages/auth/register/Register.jsx";
 
 const App = () => {
   const lightTheme=useSelector(isLightState)
@@ -23,8 +23,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<Home />}/>
-          <Route index path="/auth" element={<Auth />}/>
-          <Route index path="/register" element={<Register />}/>
+          <Route path="/auth/login" element={<Login />}/>
+          <Route path="/auth/register" element={<Register />}/>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

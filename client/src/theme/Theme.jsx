@@ -1,6 +1,7 @@
 import {createTheme} from "@mui/material";
 import {TypographyStyle} from "./requirements/TypographyStyle.jsx";
 import {colors} from "./requirements/Palette.jsx";
+import theme from "tailwindcss/defaultTheme.js";
 
 export const Theme = (palette) => createTheme(
     {
@@ -19,8 +20,8 @@ export const Theme = (palette) => createTheme(
         components: {
             MuiCssBaseline: {
                 styleOverrides: (theme) => ({
-                        'header':{
-                            backgroundColor:palette.background.default
+                        'header': {
+                            backgroundColor: palette.background.default
                         }
                     }
                 ),
@@ -36,7 +37,7 @@ export const Theme = (palette) => createTheme(
                             boxShadow: "none",
                             width: "fit-content",
                             ":hover": {
-                                boxShadow: "none",
+                                //boxShadow: "none",
                                 backgroundColor: "#EDEFEE"
                             }
 
@@ -46,15 +47,31 @@ export const Theme = (palette) => createTheme(
                         props: {variant: 'contained', color: 'primary'},
                         style: {
                             padding: "0.6em 1.5em",
-                            borderRadius: "1.5em",
                             color: colors.light,
-                            boxShadow: "none",
-
+                            borderRadius: ".5rem",
+                            border: "2px solid transparent",
+                            boxShadow: "0px 7.5px 22.5px #F54748",
                             ":hover": {
                                 background: "linear-gradient(50deg, rgba(255, 255, 255, 0.8) -31.53%, #F54748 400%)",
-                                outline: `2px solid ${palette.primary.main}`,
+                                borderColor: palette.primary.main,
                                 color: palette.primary.main,
-                                transition: "background .5s,color .5s"
+                                boxShadow: "0px 7.5px 22.5px #F54748",
+                                transition: "background .5s,color .5s,border-color .5s"
+                            }
+
+                        }
+                    },
+
+                    {
+                        props: {variant: 'outlined', color: 'primary'},
+                        style: {
+                            border:`2px solid ${palette.primary.main}`,
+                            borderRadius: ".5rem",
+                            ":hover": {
+                                background: palette.primary.main,
+                                color: palette.background.default,
+                                boxShadow: "0px 7.5px 22.5px #F54748",
+                                transition: "background .5s,color .5s,box-shadow .5s"
                             }
 
                         }
@@ -67,7 +84,7 @@ export const Theme = (palette) => createTheme(
                         backgroundColor: 'rgba(245,71,72,0.1)',
                     },
                     label: {
-                        fontFamily:"Sofia Pro Light",
+                        fontFamily: "Sofia Pro Light",
                         color: palette.text.primary,
                         fontSize: "1.1rem"
                     }
