@@ -1,0 +1,21 @@
+@use "../../../assets/scss/abstracts/colors" as *;
+
+.login{
+  display: flex;
+  background: #F9FAFF;
+  height: 100vh;
+  .left-side{
+    background: $light;
+    box-shadow: 40px 0px 40px rgba(0, 0, 0, 0.02);
+    padding:  0 20rem;
+    display: flex;
+    .login-form{
+      flex: 1;
+      max-width: calc(640px + 2rem);
+    }
+  }
+  > img{
+    transform: translateX(-18rem);
+  }
+
+}

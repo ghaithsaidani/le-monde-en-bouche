@@ -1,0 +1,96 @@
+@use '../../../assets/scss/abstracts/colors' as *;
+
+.login-form {
+  display: grid;
+  place-self: center;
+
+  > h2 {
+    font-size: 3.5rem;
+    color: $text-secondary;
+  }
+
+  .connecter-ici {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    hr {
+      width: 7rem;
+      border-top: 3px solid;
+      border-radius: 5px;
+    }
+
+    h6 {
+      color: $primary;
+    }
+  }
+
+  .connect-with {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+    li {
+      button {
+        width: 15rem;
+        height: 3.5rem;
+        font-size: 0.8rem;
+      }
+
+
+      /*&:last-child {
+        button {
+          color: $light;
+          &:hover {
+            background: linear-gradient(50deg, rgba(255, 255, 255, 0.8) -31.53%, #F54748 400%);
+            color: $dark;
+          }
+        }
+      }*/
+    }
+  }
+
+  > h5 {
+    text-align: center;
+    font-family: "Sofia Pro Bold";
+    font-size: 1.5rem;
+    margin: 2rem 0 1.5rem;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem 0;
+
+
+    .MuiFormControlLabel-root{
+      grid-row: 3;
+      grid-column: 1/3;
+    }
+    > button{
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1.7rem;
+      background: $primary;
+      color: $light;
+      box-shadow: 0px 10px 30px #F54748;
+      border: none;
+      &:hover{
+        background: linear-gradient(50deg, rgba(255, 255, 255, 0.8) -31.53%, #F54748 400%);
+        outline:2px solid $primary;
+        color: $primary;
+        //transition: background .5s,outline-color .5s,color .5s;
+      }
+    }
+
+    .go-to-register{
+      grid-row: 5;
+      grid-column: 1/3;
+      p{
+        span{
+          color: $primary;
+        }
+      }
+    }
+  }
+}

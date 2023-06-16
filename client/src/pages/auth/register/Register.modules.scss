@@ -1,0 +1,27 @@
+@use "../../../assets/scss/abstracts/colors" as *;
+
+.register{
+  display: flex;
+  background: #F9FAFF;
+  height: 100vh;
+
+
+  .right-side{
+    background: $light;
+    box-shadow: -40px 0px 40px rgba(0, 0, 0, 0.02);
+    padding: 0;
+    margin-left: 45rem;
+    display: grid;
+    place-items: center;
+    /*.auth-form{
+      flex: 1;
+      max-width: calc(640px + 2rem);
+    }*/
+  }
+  > img{
+    position: absolute;
+    height: 100%;
+    transform: translateX(5rem);
+  }
+
+}

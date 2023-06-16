@@ -21,6 +21,7 @@ export {default as PreReservation} from './about us services/image 18.png'
 
 //Login
 export {default as LoginImage} from './login Image.png'
+export {default as SignUpImage} from './Sign Up Image.png'
 
 //flags
 export {default as Egypt} from "./flags/icons8-egypt.svg"

@@ -55,7 +55,7 @@ export const Navbar = () => {
                 {links.map(link=>(
                     <li key={link.text}><a href={`#${link.href}`}>{link.text}</a></li>
                 ))}
-                <Button variant={"contained"} color={"primary"} endIcon={<ImUser/>} href="/auth">Connecter</Button>
+                <Button variant={"contained"} color={"primary"} endIcon={<ImUser/>} href="/auth/login">Connecter</Button>
             </ul>
 
         </nav>
