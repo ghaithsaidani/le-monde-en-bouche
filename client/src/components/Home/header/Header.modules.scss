@@ -36,6 +36,37 @@ header {
       justify-content: center;
       transition: top .5s;
 
+      li {
+        a {
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            height: .2rem;
+            width: 100%;
+            bottom: -.5rem;
+            border-radius: 5rem;
+            background: $primary;
+            transform: scaleX(0);
+          }
+
+          &:hover:before {
+            transform: scaleX(1);
+            animation: links .7s;
+          }
+        }
+
+        @keyframes links {
+          from {
+            transform: scaleX(0);
+          }
+          to {
+            transform: scaleX(1);
+          }
+        }
+      }
+
       &.nav-ul-collapsed {
         top: 0;
       }
@@ -50,10 +81,12 @@ header {
 
     nav {
       gap: 40%;
+
       .logo {
         width: 7rem;
         z-index: 2;
       }
+
       .nav-ul {
         position: relative;
         background: transparent;
@@ -74,6 +107,7 @@ header {
     nav {
       background: transparent;
       padding: 1.5rem 4rem 1.5rem 6rem;
+
       .logo {
         //width: 5.5em;
       }

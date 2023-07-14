@@ -1,21 +1,59 @@
 @use "../../../assets/scss/abstracts/colors" as *;
 
-.login{
+.login {
   display: flex;
   background: #F9FAFF;
   height: 100vh;
-  .left-side{
+
+  .left-side {
     background: $light;
     box-shadow: 40px 0px 40px rgba(0, 0, 0, 0.02);
-    padding:  0 20rem;
-    display: flex;
-    .login-form{
+    padding: 0 20rem 0 15rem;
+    display: grid;
+
+    .go-back-home {
+      display: flex;
+      align-items: center;
+      color: $primary;
+      gap: 1rem;
+
+      a{
+        position: relative;
+       &:before{
+         content: '';
+         position: absolute;
+         height: .1em;
+         width: 0;
+         bottom: 0;
+         border-radius: 2rem;
+         background: $primary;
+
+       }
+        &:hover:before{
+          width: 100%;
+          animation: links .7s;
+        }
+      }
+      @keyframes links {
+        from{
+          width: 0;
+        }to{
+        width:100%;
+                 }
+      }
+    }
+
+    .login-form {
       flex: 1;
       max-width: calc(640px + 2rem);
+      padding-left: 5rem;
     }
   }
-  > img{
+
+  > img {
     transform: translateX(-18rem);
   }
 
 }
+
+

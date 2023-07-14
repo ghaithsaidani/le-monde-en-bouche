@@ -2,14 +2,10 @@ import './RegisterForm.modules.scss'
 import {
     Button,
     Checkbox,
-    FormControl,
-    FormControlLabel, FormHelperText,
-    IconButton,
-    InputAdornment, OutlinedInput,
-    TextField,
+    FormControlLabel,
     Typography
 } from "@mui/material";
-import {FaArrowRight, ImUser} from "react-icons/all.js";
+import {FaArrowRight, ImUser, RiArrowGoBackLine} from "react-icons/all.js";
 import {InputField} from "../input-field/InputField.jsx";
 import {useState} from "react";
 import * as yup from "yup";
@@ -40,7 +36,7 @@ export const RegisterForm = () => {
     const client = axios.create({
         baseURL: "http://127.0.0.1:8000",
     });
-    const {values, handleSubmit, handleChange, errors, touched} = useFormik({
+    const {values, handleChange, errors, touched} = useFormik({
         initialValues: {
             nom: '',
             prenom: '',
@@ -169,13 +165,19 @@ export const RegisterForm = () => {
     ]
     return (
         <div className={"register-form"}>
-            <div className={"go-to-login"}>
-                <a href={"/auth/login"}>
-                    <Typography variant={"body2"}>
-                        J&apos;ai déja un compte ?
-                        <ImUser/>
-                    </Typography>
-                </a>
+            <div className={"go-to"}>
+                <div className={"go-back-home"}>
+                    <RiArrowGoBackLine/>
+                    <a href={"/"}><Typography variant={"body1"}>Acceuil</Typography></a>
+                </div>
+                <div className={"go-to-login"}>
+                    <a href={"/auth/login"}>
+                        <Typography variant={"body2"}>
+                            J&apos;ai déja un compte ?
+                            <ImUser/>
+                        </Typography>
+                    </a>
+                </div>
             </div>
             <div className={"head"}>
                 <Typography variant={"h2"}>Donnez vos Informations</Typography>

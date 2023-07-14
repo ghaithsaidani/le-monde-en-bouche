@@ -16,6 +16,7 @@ import {useFormik} from "formik";
 import axios from "axios";
 import * as yup from "yup";
 import {InputField} from "../input-field/InputField.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const LoginForm = () => {
 
@@ -36,6 +37,7 @@ export const LoginForm = () => {
 
 
     const [showPassword , setShowPassword] = useState(false);
+    const navigate = useNavigate();
     let validationschema=yup.object().shape({
         email: yup.string()
             .email("Email invalide")
@@ -50,7 +52,7 @@ export const LoginForm = () => {
     const client = axios.create({
         baseURL: "http://127.0.0.1:8000",
     });
-    const {values,handleSubmit,handleChange,errors,touched} = useFormik({
+    const {values,handleSubmit,handleChange,setFieldError,errors,touched} = useFormik({
         initialValues: {
             email: '',
             password: '',
@@ -63,9 +65,14 @@ export const LoginForm = () => {
             client
                 .post("/api/login", values)
                 .then(function (res) {
-                    console.log(res.data);
+                    if (res.status === 200)
+                        navigate("/")
+                    //console.log(res.data);
                     //console.log(Cookies.get('sessionid'))
-                });
+                }).catch(err=>{
+                    setFieldError('password', 'Email ou mot de passe incorrecte');
+                    console.log(err.response.data[0])
+            });
         }
     });
     const handleClickShowPassword=()=>{
